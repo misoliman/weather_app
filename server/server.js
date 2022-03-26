@@ -5,7 +5,7 @@ const chalk = require("chalk");
 const axios = require("axios")
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 const APIKey = "ffe4d83a2710a68676823071cda0b974";
 
@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 app.set("views", viewsLocation);
 
 app.use(cors({
-    origin: `http://localhost:${PORT}`
+    origin: `http://localhost:${port}`
 }))
 
 app.use(express.static(publicLocation));
@@ -54,6 +54,6 @@ app.get("*", (req, res) => {
 })
 
 
-app.listen(PORT, () => {
-    console.log(chalk.green.inverse(`Listening on port ${PORT}`));
+app.listen(port, () => {
+    console.log(chalk.green.inverse(`Listening on port ${port}`));
 })

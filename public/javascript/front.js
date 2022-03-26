@@ -15,7 +15,7 @@ form.addEventListener("submit", (e) => {
     }
 
     output.innerHTML = "Loading..."
-    axios.get(`http://localhost:3000/weather?city=${city.value}&unit=${unit}`).then((res) => {
+    axios.get(`/weather?city=${city.value}&unit=${unit}`).then((res) => {
 
 
 
